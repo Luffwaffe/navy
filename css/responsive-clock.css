@@ -184,7 +184,7 @@
 }
 
 .flip-clock-divider .flip-clock-label {
-  color: white !important;
+  color: rgb(72, 63, 63) !important;
   font-size: 15px !important;
   font-weight: bold !important;
   font-family: Sofia Sans Condensed !important; 
