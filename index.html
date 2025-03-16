@@ -143,12 +143,37 @@
 		</header>
 
 
-		<div id="fh5co-event" style="background-image:url(images/eventbk.jpg);" class="fh5co-cover" data-stellar-background-ratio="1">
+		<div id="fh5co-event" style="background-image:url(images/2.9.jpg);" class="fh5co-bg" data-stellar-background-ratio="1">
+			<script>
+				const images = [
+					'images/2.1.jpg',
+					'images/2.2.jpg',
+					'images/2.3.jpg',
+					'images/2.4.jpg',
+					'images/2.5.jpg',
+				];
+
+				let currentImageIndex = 0;
+
+				function changeBackground() {
+					const element = document.getElementById('fh5co-event');
+					element.style.backgroundImage = `url(${images[currentImageIndex]})`;
+
+					// Move to the next image, looping back to the first one
+					currentImageIndex = (currentImageIndex + 1) % images.length;
+				}
+
+				// Change background every 5 seconds (5000 milliseconds)
+				setInterval(changeBackground, 5000);
+
+				// Set initial background
+				changeBackground();
+			</script>
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-						<h2>Sự Kiện <img src="images/hqIcon1.png" width="150" height="200" alt="Event Icon"
+						<h2>Thông tin<img src="images/hqIcon1.png" width="150" height="200" alt="Event Icon"
 								class="event-icon"></h2>
 					</div>
 				</div>
@@ -191,7 +216,7 @@
 		</div>
 
 
-		<div id="fh5co-gallery" class="fh5co-section-gray" style="background-image:url(images/ebg.jpg);">
+		<div id="fh5co-gallery" class="fh5co-section-gray" style="background-image:url(images/2.2.jpg);">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
