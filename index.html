@@ -114,41 +114,41 @@
 					
 					element.style.backgroundImage = `url(${images[currentImageIndex]})`;
 					
-					const keyframes0 = [
-  { 
-    backgroundImage: `url(${images[currentImageIndex - 1]})`, 
-    transform: 'scale(1)', 
-    opacity: 1
-  },
-  { 
-    backgroundImage: `url(${images[currentImageIndex - 1]})`, 
-    transform: 'scale(1.05)', 
-    opacity: 0.6
-  },
-  { 
-    backgroundImage: `url(${images[currentImageIndex - 1]})`, 
-    transform: 'scale(1.1)', 
-    opacity: 0
-  }
-];
+// 					const keyframes0 = [
+//   { 
+//     backgroundImage: `url(${images[currentImageIndex - 1]})`, 
+//     transform: 'scale(1)', 
+//     opacity: 1
+//   },
+//   { 
+//     backgroundImage: `url(${images[currentImageIndex - 1]})`, 
+//     transform: 'scale(1.05)', 
+//     opacity: 0.6
+//   },
+//   { 
+//     backgroundImage: `url(${images[currentImageIndex - 1]})`, 
+//     transform: 'scale(1.1)', 
+//     opacity: 0
+//   }
+// ];
 
-const keyframes = [
-  { 
-    backgroundImage: `url(${images[currentImageIndex]})`, 
-    transform: 'scale(1.1)', 
-    opacity: 0
-  },
-  { 
-    backgroundImage: `url(${images[currentImageIndex]})`, 
-    transform: 'scale(1.05)', 
-    opacity: 0.6
-  },
-  { 
-    backgroundImage: `url(${images[currentImageIndex]})`, 
-    transform: 'scale(1)', 
-    opacity: 1
-  }
-];
+// const keyframes = [
+//   { 
+//     backgroundImage: `url(${images[currentImageIndex]})`, 
+//     transform: 'scale(1.1)', 
+//     opacity: 0
+//   },
+//   { 
+//     backgroundImage: `url(${images[currentImageIndex]})`, 
+//     transform: 'scale(1.05)', 
+//     opacity: 0.6
+//   },
+//   { 
+//     backgroundImage: `url(${images[currentImageIndex]})`, 
+//     transform: 'scale(1)', 
+//     opacity: 1
+//   }
+// ];
 
 					// Define the timing properties
 					const timing = {
@@ -156,10 +156,10 @@ const keyframes = [
 						easing: 'ease-in-out',
 						fill: 'forwards'  // Keep the final state of the animation
 					};
-						element.animate(keyframes0, timing);
-						setTimeout(() => {
-						element.animate(keyframes, timing);
-					}, 1500); 
+						// element.animate(keyframes0, timing);
+						// // setTimeout(() => {
+						// element.animate(keyframes, timing);
+					// }, 1500); 
 					// Move to the next image, looping back to the first one
 					currentImageIndex = (currentImageIndex + 1) % images.length;
 				}
