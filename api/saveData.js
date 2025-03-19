@@ -1,15 +1,22 @@
-// Vercel Serverless Function to handle POST request
+import fs from 'fs';
+import path from 'path';
+
 export default function handler(req, res) {
     if (req.method === 'POST') {
-      const { name, email } = req.body;  // Example data from frontend
-      
-      // You can add backend logic here (e.g., save data to a database or send it to a Google Sheet)
-      console.log(`Received data: ${name}, ${email}`);
-      
-      // Respond with a success message
-      return res.status(200).json({ message: 'Data saved successfully!' });
+        // const { name, email } = req.body;
+        
+        console.log(`Received data: ${name}, ${email}`);
+        
+        // Append data to the file
+        const name = "quan";
+        const email = "khuat";
+
+        fetch("https://docs.google.com/spreadsheets/d/1X5lgewYPnPRbAXMF52DJ3aXXZO966zs8YhCtQOkXslI", { 
+            method: "POST",
+            body: JSON.stringify({ name, email }),
+            headers: { "Content-Type": "application/json" }
+        })
     } else {
-      return res.status(404).json({ message: 'Route not found' });
+        return res.status(404).json({ message: 'Route not found' });
     }
-  }
-  
+}
