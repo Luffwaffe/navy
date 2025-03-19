@@ -132,17 +132,13 @@
 				}
 				const data = { fullName, phoneNumber };
 				try {
-					const response = await fetch("/save-data", {
+					const response = await fetch("/api", {
 						method: "POST",
 						headers: {
 							"Content-Type": "application/json"
 						},
 						body: JSON.stringify(data)
 					});
-					
-					if (!response.ok) {  // ✅ Check if server responded with error
-            		throw new Error(`Server responded with ${response.status}`);
-        }
 
 					const result = await response.json();
 					alert(result.message);
