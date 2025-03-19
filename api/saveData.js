@@ -1,10 +1,10 @@
 // Vercel Serverless Function to handle POST request
 export default function handler(req, res) {
     if (req.method === 'POST') {
-      const { name, email } = req.body;  // Example data from frontend
+      const { fullName, phoneNumber } = req.body;  // Example data from frontend
       
       // You can add backend logic here (e.g., save data to a database or send it to a Google Sheet)
-      console.log(`Received data: ${name}, ${email}`);
+      console.log(`Received data: ${fullName}, ${phoneNumber}`);
       
       // Respond with a success message
       return res.status(200).json({ message: 'Data saved successfully!' });
