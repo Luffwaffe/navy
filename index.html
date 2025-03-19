@@ -66,6 +66,100 @@
 
 </head>
 
+<!-- toi se tham gia popup -->
+<style>
+	#popup-overlay {
+	  display: none;
+	  position: fixed;
+	  top: 0%;
+	  left: 0%;
+	  width: 100%;
+	  height: 100%;
+	  background: rgba(58, 58, 57, 0.5);
+	  z-index: 999;
+	  pointer-events: auto;
+	}
+	#popup-content {
+	  position: fixed;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  width: 90%;
+	  height: 50%;
+	  padding: 20px;
+	  background: rgb(236, 236, 216);
+	  border-radius: 10px;
+	  text-align: center;
+	  border-radius: 15px;
+	  font-size: 34px;
+	  z-index: 1000;
+	}
+	.no-interaction {
+	  pointer-events: none; /* Prevent clicks on everything except popup */
+	  filter: blur(1px);
+	}
+	.close-button {
+    font-size: 30px;
+    border-radius: 10px;
+    width: 280px;
+    height: 50px;
+    background: #838080; /* Red color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+	position: absolute;
+	bottom: 20px; /* Distance from bottom */
+	transform: translateX(-105%); /* Center horizontally */
+	margin-bottom: 20px;
+  }
+</style>
+<div id="popup-overlay">
+	<div id="popup-content">
+		<p>Đây là popup!</p>
+		<input type="text" id="name" placeholder="Họ và tên" style="font-size: 20px; width: 90%;">
+		<input type="text" id="phoneNumber" placeholder="Số điện thoại nhé" style="font-size: 20px; width: 90%;">
+		<button onclick="closePopup()" class="close-button">Xác nhận tham dự</button>
+		<script>
+			async function closePopup() {
+
+				const fullName = document.getElementById("name").value;
+				const phoneNumber = document.getElementById("phoneNumber").value;
+
+				if (!fullName || !phoneNumber) {
+					alert("Vui lòng nhập đầy đủ thông tin!");
+					return;
+				}
+				const data = { fullName, phoneNumber };
+				try {
+					const response = await fetch("save-data", {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json"
+						},
+						body: JSON.stringify(data)
+					});
+					
+					if (!response.ok) {  // ✅ Check if server responded with error
+            		throw new Error(`Server responded with ${response.status}`);
+        }
+
+					const result = await response.json();
+					alert(result.message);
+					closePopup();
+				} catch (error) {
+					console.error("Error:", error);
+					alert("Lỗi khi gửi dữ liệu!");
+				}
+
+			  document.getElementById("popup-overlay").style.display = "none";
+			  document.getElementById("main-content").classList.remove("no-interaction");
+			}
+		</script>
+	</div>
+</div>
+
+
 <body>
 	<div class="fh5co-loader">
 	</div>
@@ -166,13 +260,26 @@
 		</header>
 
 
+
+
+
+		
 		<div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/2.5.jpg);" data-stellar-background-ratio="0.5">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-						<h2>Thông tin <img src="images/hqIcon2.png" width="150" height="280" alt="Event Icon"
-								class="event-icon"></h2>
+						<h2>Thông tin <img src="images/hqIcon2.png" width="150" height="280" alt="Event Icon" class="event-icon"></h2>
+						
+						<!-- toi se tham gia btn -->
+    					<button onclick="showPopup()" style="font-size: 36px; border-radius: 7px; width: 280px; height: 70px;">Tôi sẽ tham dự</button> 
+						<script>
+							function showPopup() {
+								document.getElementById("popup-overlay").style.display = "block";
+								document.getElementById("main-content").classList.add("no-interaction");
+							}
+						</script>
+
 					</div>
 				</div>
 				<div class="row">
