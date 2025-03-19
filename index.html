@@ -132,7 +132,7 @@
 				}
 				const data = { fullName, phoneNumber };
 				try {
-					const response = await fetch("save-data", {
+					const response = await fetch("/save-data", {
 						method: "POST",
 						headers: {
 							"Content-Type": "application/json"
