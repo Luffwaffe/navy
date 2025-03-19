@@ -119,18 +119,16 @@
 		<p>Đây là popup!</p>
 		<input type="text" id="name" placeholder="Họ và tên" style="font-size: 20px; width: 90%;">
 		<input type="text" id="phoneNumber" placeholder="Số điện thoại nhé" style="font-size: 20px; width: 90%;">
+		<!-- <h2>My Google Sheet</h2>
+    		<iframe src="https://docs.google.com/spreadsheets/d/1X5lgewYPnPRbAXMF52DJ3aXXZO966zs8YhCtQOkXslI/" 
+        		width="100%" height="400px">
+			</iframe> -->
 		<button onclick="closePopup()" class="close-button">Xác nhận tham dự</button>
 		<script>
 			async function closePopup() {
 
 				const fullName = document.getElementById("name").value;
 				const phoneNumber = document.getElementById("phoneNumber").value;
-
-				if (!fullName || !phoneNumber) {
-					alert("Vui lòng nhập đầy đủ thông tin!");
-					return;
-				}
-				const data = { fullName, phoneNumber };
 				try {
 					const response = await fetch("https://navy-virid.vercel.app/api/saveData", {
 						method: "POST",
@@ -142,14 +140,12 @@
 
 					const result = await response.json();
 					alert(result.message);
-					closePopup();
 				} catch (error) {
 					console.error("Error:", error);
 					alert("Lỗi khi gửi dữ liệu!");
 				}
-
-			  document.getElementById("popup-overlay").style.display = "none";
-			  document.getElementById("main-content").classList.remove("no-interaction");
+			  	ocument.getElementById("popup-overlay").style.display = "none";
+			 	document.getElementById("main-content").classList.remove("no-interaction");
 			}
 		</script>
 	</div>

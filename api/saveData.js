@@ -3,24 +3,19 @@ import path from 'path';
 
 export default function handler(req, res) {
     if (req.method === 'POST') {
-        const { name, email } = req.body;
+        // const { name, email } = req.body;
         
         console.log(`Received data: ${name}, ${email}`);
         
-        // Define the file path
-        const filePath = path.join(process.cwd(), 'data.txt');
-        
-        // Format data as a string
-        const data = `Name: ${name}, Email: ${email}\n`;
-        
         // Append data to the file
-        fs.appendFile(filePath, data, (err) => {
-            if (err) {
-                console.error('Error writing to file:', err);
-                return res.status(500).json({ message: 'Error saving data' });
-            }
-            return res.status(200).json({ message: 'Data saved successfully!' });
-        });
+        const name = "quan";
+        const email = "khuat";
+
+        fetch("https://docs.google.com/spreadsheets/d/1X5lgewYPnPRbAXMF52DJ3aXXZO966zs8YhCtQOkXslI", { 
+            method: "POST",
+            body: JSON.stringify({ name, email }),
+            headers: { "Content-Type": "application/json" }
+        })
     } else {
         return res.status(404).json({ message: 'Route not found' });
     }
