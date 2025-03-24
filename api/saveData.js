@@ -1,30 +1,43 @@
-// Vercel Serverless Function to handle POST request
+import { google } from 'googleapis';
 import fs from 'fs';
 import path from 'path';
 
 export default function handler(req, res) {
   if (req.method === 'POST') {
-    const { fullName, phoneNumber } = req.body;  // Data from the frontend
-    
-    // Log received data (for debugging purposes)
+    const { fullName, phoneNumber } = req.body;
     console.log(`Received data: ${fullName}, ${phoneNumber}`);
+    
+    const { MongoClient } = require("mongodb");
+    const uri = "mongodb+srv://khuathongquan8396:Hohenzollern1996@quankh.nrja9.mongodb.net/?retryWrites=true&w=majority&appName=quankh"
 
-    // Define the file path (in this case, saving to 'data.txt')
-    const filePath = path.join(process.cwd(), 'data.txt');
+    const client = new MongoClient(uri);
 
-    // Prepare the data to be saved
-    const data = `Full Name: ${fullName}, Phone Number: ${phoneNumber}\n`;
+    async function run() {
+    try {
+      // Connect to the MongoDB cluster
+      await client.connect();
 
-    // Write data to the file
-    fs.appendFile(filePath, data, (err) => {
-      if (err) {
-        console.error('Error writing to file', err);
-        return res.status(500).json({ message: 'Error saving data to file' });
+      console.log("Connected to MongoDB!");
+
+      // Specify the database and collection
+      const db = client.db("myDatabase");
+      const collection = db.collection("myCollection");
+
+      // Sample data to insert
+      const data = { name: "Alice", age: 30, city: "New York" };
+
+      // Insert one document
+      const result = await collection.insertOne(data);
+
+      console.log(`Data inserted with _id: ${result.insertedId}`);
+    } catch (error) {
+      console.error("Error connecting to MongoDB:", error);
+      } finally {
+        await client.close(); // Close the connection
       }
+    }
 
-      // Respond with a success message
-      return res.status(200).json({ message: 'Data saved successfully!' });
-    });
+    run().catch(console.dir);
     
   } else {
     return res.status(404).json({ message: 'Route not found' });
