@@ -1,11 +1,12 @@
 // Vercel Serverless Function to handle POST request
+import { MongoClient } from "mongodb";
 export default function handler(req, res) {
     if (req.method === 'POST') {
       const { fullName, phoneNumber } = req.body;  // Example data from frontend
       
       // You can add backend logic here (e.g., save data to a database or send it to a Google Sheet)
       console.log(`Received data: ${fullName}, ${phoneNumber}`);
-      // const { MongoClient } = require("mongodb");
+      const { MongoClient } = require("mongodb");
 
       // Replace with your MongoDB connection string
       const uri = "mongodb://localhost:27017"; // For local MongoDB
