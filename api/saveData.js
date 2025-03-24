@@ -5,7 +5,7 @@ export default function handler(req, res) {
       
       // You can add backend logic here (e.g., save data to a database or send it to a Google Sheet)
       console.log(`Received data: ${fullName}, ${phoneNumber}`);
-      const { MongoClient } = require("mongodb");
+      // const { MongoClient } = require("mongodb");
 
       // Replace with your MongoDB connection string
       const uri = "mongodb://localhost:27017"; // For local MongoDB
