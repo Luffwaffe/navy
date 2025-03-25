@@ -143,6 +143,8 @@
 		<script>
 			async function closePopup() {
 			  document.getElementById("popup-overlay").style.display = "none";
+			  document.getElementById("content-container").style.display = "block";
+			  document.getElementById("content-container2").style.display = "block";
 			  document.getElementById("main-content").classList.remove("no-interaction");
 			}
 		</script>
@@ -351,6 +353,8 @@
 		<script>
 			async function closePopup2() {
 			  document.getElementById("popup-overlay2").style.display = "none";
+			  document.getElementById("content-container").style.display = "block";
+			  document.getElementById("content-container2").style.display = "block";
 			  document.getElementById("main-content").classList.remove("no-interaction2");
 			}
 		</script>
@@ -684,14 +688,14 @@
 			</div>
 		</div>
 	</div>
-	<div class="gototop js-top" style=" margin-bottom: 120px; margin-right: 40%;">
+	<div class="gototop js-top" style=" margin-bottom: 210px; margin-right: 20%;" id="content-container">
 		<div style="position: absolute; display: inline-block;">
 			<img src="images/join-Photoroom.png" alt="Background Image" style="width: 60px; height: 60px; border-radius: 10px; position:  absolute;">
 			<button onclick="showPopup()" style="
 				position: absolute;
 				top: 50%;
 				left: 50%;
-				width: 80px; height: 110px;
+				width: 80px; height: 95px;
 				background-color: transparent;
 				color: black;
 				border: none;
@@ -712,19 +716,20 @@
 		<script>
 			function showPopup() {
 				document.getElementById("popup-overlay").style.display = "block";
+				document.getElementById("content-container").style.display = "none";
+				document.getElementById("content-container2").style.display = "none";
 			}
 		</script>
 	</div>
-	<div class="gototop js-top" style=" margin-bottom: 120px; margin-right: 20%;">
-		
+	
+	<div class="gototop js-top" style=" margin-bottom: 120px; margin-right: 20%;" id="content-container2">
 		<div style="position: absolute; display: inline-block;">
-
-			<img src="images/gift.png" alt="Background Image" style="width: 50px; height: 50px; border-radius: 10px; position:  absolute;">
+			<img src="images/gift.png" alt="Background Image" style="width: 60px; height: 60px; border-radius: 10px; position:  absolute; margin-right: 10px;">
 			<button onclick="showPopup2()" style="
 				position: absolute;
 				top: 50%;
 				left: 50%;
-				width: 80px; height: 110px;
+				width: 80px; height: 90px;
 				background-color: transparent;
 				color: black;
 				border: none;
@@ -744,6 +749,8 @@
 		<script>
 			function showPopup2() {
 				document.getElementById("popup-overlay2").style.display = "block";
+				document.getElementById("content-container").style.display = "none";
+				document.getElementById("content-container2").style.display = "none";
 			}
 		</script>
 	</div>
