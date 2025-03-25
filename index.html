@@ -85,7 +85,7 @@
 	  left: 50%;
 	  transform: translate(-50%, -50%);
 	  width: 95%;
-	  height: 90%;
+	  height: 85%;
 	  padding: 5px;
 	  background: rgb(243, 243, 234);
 	  border-radius: 10px;
@@ -113,6 +113,7 @@
 	margin-bottom: 5px;
   }
 </style>
+
 <div id="popup-overlay">
 	<div id="popup-content">
 		<p>Hải-QUân 06-04-2024</p>
@@ -129,6 +130,206 @@
 			  document.getElementById("main-content").classList.remove("no-interaction");
 			}
 		</script>
+	</div>
+</div>
+<!-- toi se gui mung popup -->
+<style>
+	#popup-overlay2 {
+	  display: none;
+	  position: fixed;
+	  top: 0%;
+	  left: 0%;
+	  width: 100%;
+	  height: 100%;
+	  background: rgba(58, 58, 57, 0.5);
+	  z-index: 999;
+	  pointer-events: auto;
+	}
+	#popup-content2 {
+	  position: fixed;
+	  top: 47%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  width: 95%;
+	  height: 85%;
+	  padding: 5px;
+	  background: rgb(243, 243, 234);
+	  border-radius: 10px;
+	  text-align: center;
+	  border-radius: 15px;
+	  font-size: 34px;
+	  z-index: 1000;
+	}
+	.no-interaction2 {
+	  pointer-events: none; /* Prevent clicks on everything except popup */
+	  filter: blur(1px);
+	}
+	.close-button2 {
+    font-size: 20px;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    background: #838080; /* Red color */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+	position: absolute;
+	bottom: 10px; /* Distance from bottom */
+	margin-bottom: 5px;
+  }
+</style>
+<div id="popup-overlay2">
+	<div id="popup-content2">
+		<style>
+			/* Style for the modal */
+			#modal {
+				display: none;
+				position: fixed;
+				z-index: 1;
+				left: 0;
+				top: 0;
+				width: 100%;
+				padding-top: 200px;
+				height: 100%;
+				border-radius: 10px;
+				overflow: auto;
+				background-color: rgb(0, 0, 0);
+				background-color: rgba(0, 0, 0, 0.8);
+			}
+	
+			#modal-content {
+				margin: auto;
+				display: block;
+				width: 80%;
+				max-width: 700px;
+			}
+	
+			/* Close button style */
+			#close {
+				position: absolute;
+				top: 20px;
+				right: 20px;
+				color: #f1f1f1;
+				font-size: 40px;
+				font-weight: bold;
+				background-color: transparent;
+				border: none;
+				cursor: pointer;
+			}
+	
+			#close:hover,
+			#close:focus {
+				color: #bbb;
+				text-decoration: none;
+				cursor: pointer;
+			}
+		</style>
+	
+	<style>
+		/* Style for the modal */
+		#modal2 {
+			display: none;
+				position: fixed;
+				z-index: 1;
+				left: 0;
+				top: 0;
+				width: 100%;
+				padding-top: 200px;
+				height: 100%;
+				border-radius: 10px;
+				overflow: auto;
+				background-color: rgb(0, 0, 0);
+				background-color: rgba(0, 0, 0, 0.8);
+		}
+
+		#modal-content2 {
+			margin: auto;
+			display: block;
+			width: 80%;
+			max-width: 700px;
+		}
+
+		/* Close button style */
+		#close2 {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			color: #f1f1f1;
+			font-size: 40px;
+			font-weight: bold;
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+		}
+
+		#close2:hover,
+		#close2:focus {
+			color: #bbb;
+			text-decoration: none;
+			cursor: pointer;
+		}
+	</style>
+
+		<p>Hải-QUân 06-04-2024</p>
+		<p><b style=" font-weight: 50px;font-size: 22px;">Mừng cưới chú rể</b></p>
+		<img src="images/qQr.jpg" alt="Image 1" style="width: 200px; height: 200px; margin: 10px;" onclick="showImage()">
+		<div id="modal">
+			<span id="close" onclick="closeImage()">&times;</span>
+			<img id="modal-content" src="" alt="Full-size Image">
+		</div>
+		
+
+		<p><b style=" font-weight: 50px;font-size: 22px;">Mừng cưới cô dâu</b></p>
+        <img src="images/hQr.jpg" alt="Image 2" style="width: 200px; height: 200px; margin: 10px;" onclick="showImage2()">
+		<div id="modal2">
+			<span id="close2" onclick="closeImage2()">&times;</span>
+			<img id="modal-content2" src="" alt="Full-size Image">
+		</div>
+
+
+		<script>
+			// Function to display the image in the modal
+			function showImage() {
+				var img = document.querySelector("img[src='images/qQr.jpg']");
+				var modal = document.getElementById("modal");
+				var modalImg = document.getElementById("modal-content");
+		
+				modal.style.display = "block";
+				modalImg.src = img.src; // Set the source of the modal image to the clicked image
+			}
+		
+			// Function to close the modal
+			function closeImage() {
+				document.getElementById("modal").style.display = "none";
+			}
+		</script>
+		<script>
+			// Function to display the image in the modal
+			function showImage2() {
+				var img = document.querySelector("img[src='images/hQr.jpg']");
+				var modal = document.getElementById("modal2");
+				var modalImg = document.getElementById("modal-content2");
+		
+				modal.style.display = "block";
+				modalImg.src = img.src; // Set the source of the modal image to the clicked image
+			}
+		
+			// Function to close the modal
+			function closeImage2() {
+				document.getElementById("modal2").style.display = "none";
+			}
+		</script>
+		
+		
+		<button onclick="closePopup2()" style="bottom: 50px;; color: white; border: none; border-radius: 5px; background: #0ca547; font-size: 30px; width: 100%; height: 40;">Done</button>
+		<script>
+			async function closePopup2() {
+			  document.getElementById("popup-overlay2").style.display = "none";
+			  document.getElementById("main-content").classList.remove("no-interaction2");
+			}
+		</script>
+
 	</div>
 </div>
 
@@ -155,7 +356,7 @@
 
 		<header id="fh5co-header" class="fh5co-cover" role="banner" data-stellar-background-ratio="0.5">
 			<audio id="background-music" loop>
-				<source src="images/ido.mp3" type="audio/mp3">
+				<source src="images/soviet.mp3" type="audio/mp3">
 			</audio>
 			<script>
 				const music = document.getElementById('background-music');
@@ -243,17 +444,6 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 						<h2>Thông tin <img src="images/hqIcon2.png" width="150" height="280" alt="Event Icon" class="event-icon"></h2>
-						
-						<!-- toi se tham gia btn -->
-    					<button onclick="showPopup()" style="border: none; color: rgb(248, 248, 248); background-color: #0ca547; font-size: 36px; border-radius: 7px; width: 350px; height: 70px;">Điền thông tin tham dự</button> 
-						<script>
-							function showPopup() {
-								
-								document.getElementById("popup-overlay").style.display = "block";
-								// document.getElementById("main-content").classList.add("no-interaction");
-							}
-						</script>
-
 					</div>
 				</div>
 				<div class="row">
@@ -470,7 +660,52 @@
 		</div>
 	</div>
 	<div class="gototop js-top">
-		<a href="images/hightlight.mp4" class="js-gotop"><i class="icon-arrow-up"></i></a>
+		<!-- <a href="images/hightlight.mp4" class="js-gotop"><i class="icon-arrow-up"></i></a> -->
+		<button onclick="showPopup()" class="blink-button" style="display: flex; justify-content: center; gap: 10px; margin-right: 5px; border: none; color: rgb(248, 248, 248); background-color: #0ca547; 
+			font-size: 18px; border-radius: 7px; width: 140px; height: 30px;">Tôi sẽ tham dự</button> 
+		<script>
+			function showPopup() {
+				document.getElementById("popup-overlay").style.display = "block";
+				// document.getElementById("main-content").classList.add("no-interaction");
+			}
+		</script>
+		<button onclick="showPopup2()" style="display: flex; justify-content: center; gap: 10px; margin-top: 5px; border: none; color: rgb(248, 248, 248); background-color: #4265e4; 
+		font-size: 18px; border-radius: 7px; width: 140px; height: 30px;">Tôi sẽ gửi mừng</button> 
+	<script>
+		function showPopup2() {
+			document.getElementById("popup-overlay2").style.display = "block";
+			// document.getElementById("main-content").classList.add("no-interaction");
+		}
+	</script>
+	<style>
+        .blink-button {
+            border: none;
+            color: #f8f8f8;
+            background-color: #0ca547;
+            font-size: 20px;
+            border-radius: 7px;
+            width: 180px;
+            height: 40px;
+            cursor: pointer;
+            animation: blink 0.7s infinite;
+            transition: background-color 0.3s;
+        }
+		
+        @keyframes blink {
+    0%, 100% {
+        opacity: 1;
+        background-color: #d0350a; /* Original color */
+    }
+    50% {
+        opacity: 1;
+        background-color: #4265e4; /* Blinking color */
+    }
+}
+
+        .blink-button:hover {
+            background-color: #652d05;
+        }
+    </style>
 	</div>
 
 	<!-- jQuery -->
