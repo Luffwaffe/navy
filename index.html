@@ -87,7 +87,7 @@
 	  width: 95%;
 	  height: 85%;
 	  padding: 5px;
-	  background: rgb(243, 243, 234);
+	  background: rgb(245, 242, 235);
 	  border-radius: 10px;
 	  text-align: center;
 	  border-radius: 15px;
@@ -111,19 +111,35 @@
 	position: absolute;
 	bottom: 10px; /* Distance from bottom */
 	margin-bottom: 5px;
+	
   }
 </style>
 
 <div id="popup-overlay">
 	<div id="popup-content">
-		<p>Hải-QUân 06-04-2024</p>
+		<p>Hải-Quân</p>
+		
+	<span id="close2" onclick="closePopup()" style="
+		background-image: url('images/x2.png');
+		background-size: cover; 
+		width: 50px;
+		height: 50px;
+		display: inline-block;
+		cursor: pointer;
+		position: absolute;
+		margin-left: 0px;
+		top: 10px;
+		right: 10px;
+		border-radius: 5px;
+		z-index: 100;">
+	</span>
+
 		<iframe 
 			src="https://docs.google.com/forms/d/e/1FAIpQLSdPvtPIs5QBAyWx9fwbABfMcgrxgzs8OOykjFvhd8Zop0MJUA/formResponse" 
 			width=100%
 			height=80% 
         	frameborder="0">
     	</iframe>
-		<button onclick="closePopup()" style="bottom: 50px;; color: white; border: none; border-radius: 5px; background: #0ca547; font-size: 30px; width: 100%; height: 40;">Done</button>
 		<script>
 			async function closePopup() {
 			  document.getElementById("popup-overlay").style.display = "none";
@@ -153,7 +169,7 @@
 	  width: 95%;
 	  height: 85%;
 	  padding: 5px;
-	  background: rgb(243, 243, 234);
+	  background: rgb(245, 242, 235);
 	  border-radius: 10px;
 	  text-align: center;
 	  border-radius: 15px;
@@ -186,7 +202,7 @@
 			#modal {
 				display: none;
 				position: fixed;
-				z-index: 1;
+				z-index: 100;
 				left: 0;
 				top: 0;
 				width: 100%;
@@ -194,8 +210,8 @@
 				height: 100%;
 				border-radius: 10px;
 				overflow: auto;
-				background-color: rgb(0, 0, 0);
-				background-color: rgba(0, 0, 0, 0.8);
+				background-color: rgb(245, 242, 235);
+				background-color: rgb(245, 242, 235);
 			}
 	
 			#modal-content {
@@ -210,8 +226,8 @@
 				position: absolute;
 				top: 20px;
 				right: 20px;
-				color: #f1f1f1;
-				font-size: 40px;
+				color: #df0c0c;
+				font-size: 80px;
 				font-weight: bold;
 				background-color: transparent;
 				border: none;
@@ -231,7 +247,7 @@
 		#modal2 {
 			display: none;
 				position: fixed;
-				z-index: 1;
+				z-index: 100;
 				left: 0;
 				top: 0;
 				width: 100%;
@@ -239,8 +255,8 @@
 				height: 100%;
 				border-radius: 10px;
 				overflow: auto;
-				background-color: rgb(0, 0, 0);
-				background-color: rgba(0, 0, 0, 0.8);
+				background-color: rgb(245, 242, 235);
+				background-color: rgb(245, 242, 235);
 		}
 
 		#modal-content2 {
@@ -255,8 +271,8 @@
 			position: absolute;
 			top: 20px;
 			right: 20px;
-			color: #f1f1f1;
-			font-size: 40px;
+			color: #df0a0a;
+			font-size: 80px;
 			font-weight: bold;
 			background-color: transparent;
 			border: none;
@@ -269,9 +285,22 @@
 			text-decoration: none;
 			cursor: pointer;
 		}
-	</style>
-
-		<p>Hải-QUân 06-04-2024</p>
+		</style>
+			<p>Hải-Quân</p>
+			<span id="close2" onclick="closePopup2()" style="
+			background-image: url('images/x2.png');
+			background-size: cover; 
+			width: 50px;
+			height: 50px;
+			display: inline-block;
+			cursor: pointer;
+			position: absolute;
+			margin-left: 0px;
+			top: 10px;
+			right: 10px;
+			border-radius: 5px;
+			z-index: 100;">
+		</span>
 		<p><b style=" font-weight: 50px;font-size: 22px;">Mừng cưới chú rể</b></p>
 		<img src="images/qQr.jpg" alt="Image 1" style="width: 200px; height: 200px; margin: 10px;" onclick="showImage()">
 		<div id="modal">
@@ -286,7 +315,6 @@
 			<span id="close2" onclick="closeImage2()">&times;</span>
 			<img id="modal-content2" src="" alt="Full-size Image">
 		</div>
-
 
 		<script>
 			// Function to display the image in the modal
@@ -320,9 +348,6 @@
 				document.getElementById("modal2").style.display = "none";
 			}
 		</script>
-		
-		
-		<button onclick="closePopup2()" style="bottom: 50px;; color: white; border: none; border-radius: 5px; background: #0ca547; font-size: 30px; width: 100%; height: 40;">Done</button>
 		<script>
 			async function closePopup2() {
 			  document.getElementById("popup-overlay2").style.display = "none";
