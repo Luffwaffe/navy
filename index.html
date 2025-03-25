@@ -688,31 +688,30 @@
 			</div>
 		</div>
 	</div>
-	<div class="gototop js-top" style=" margin-bottom: 210px; margin-right: 20%;" id="content-container">
+	<div class="gototop js-top" style=" margin-bottom: 120px; margin-right: 10%;" id="content-container">
 		<div style="position: absolute; display: inline-block;">
-			<img src="images/join-Photoroom.png" alt="Background Image" style="width: 60px; height: 60px; border-radius: 10px; position:  absolute;">
 			<button onclick="showPopup()" style="
 				position: absolute;
+				background-image: url('images/join-Photoroom.png'); /* Set your image path */
+				background-size: cover; /* Cover to fill the button */
+				background-position: center;
 				top: 50%;
 				left: 50%;
-				width: 100px; height: 100px;
+				width: 60px; height: 60px;
 				background-color: transparent;
 				color: black;
 				border: none;
 				border-radius: 7px;
 				font-size: 20px;
 				cursor: pointer;
-				opacity: 0.8; /* Adjust transparency */
+				opacity: 1; /* Adjust transparency */
 				display: flex;
 				align-items: flex-end; /* Align items to the bottom */
 				justify-content: center; /* Center horizontally */
 				padding-bottom: 5px; /* Add a little padding to avoid touching the edge */
 				box-sizing: border-box;
-			">
-				Tham dự
-			</button>
+			"></button>
 		</div>
-		
 		<script>
 			function showPopup() {
 				document.getElementById("popup-overlay").style.display = "block";
@@ -721,15 +720,23 @@
 			}
 		</script>
 	</div>
-	
-	<div class="gototop js-top" style=" margin-bottom: 120px; margin-right: 20%;" id="content-container2">
+	<div class="gototop js-top" style="margin-bottom: 155px; margin-right: 20%;" id="content-container">
+		<b style="font-size: 24px; color: black;">Tham dự</b>
+	</div>
+	<div class="gototop js-top" style="margin-bottom: 65px; margin-right: 20%;" id="content-container">
+		<b style="font-size: 24px; color: black;">Gửi mừng  </b>
+	</div>
+	<div class="gototop js-top" style=" margin-bottom: 50px; margin-right: 10%;" id="content-container2">
 		<div style="position: absolute; display: inline-block;">
 			<img src="images/gift.png" alt="Background Image" style="width: 60px; height: 60px; border-radius: 10px; position:  absolute; margin-right: 10px;">
 			<button onclick="showPopup2()" style="
 				position: absolute;
+				background-image: url('images/gift.png'); /* Set your image path */
+				background-size: cover; /* Cover to fill the button */
+				background-position: center;
 				top: 50%;
 				left: 50%;
-				width: 100px; height: 100px;
+				width: 50px; height: 50px;
 				background-color: transparent;
 				color: black;
 				border: none;
@@ -743,7 +750,6 @@
 				padding-bottom: 5px; /* Add a little padding to avoid touching the edge */
 				box-sizing: border-box;
 			">
-				 Gửi mừng
 			</button>
 		</div>
 		<script>
