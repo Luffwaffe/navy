@@ -81,13 +81,13 @@
 	}
 	#popup-content {
 	  position: fixed;
-	  top: 50%;
+	  top: 47%;
 	  left: 50%;
 	  transform: translate(-50%, -50%);
-	  width: 90%;
-	  height: 60%;
-	  padding: 20px;
-	  background: rgb(236, 236, 216);
+	  width: 95%;
+	  height: 90%;
+	  padding: 5px;
+	  background: rgb(243, 243, 234);
 	  border-radius: 10px;
 	  text-align: center;
 	  border-radius: 15px;
@@ -99,9 +99,9 @@
 	  filter: blur(1px);
 	}
 	.close-button {
-    font-size: 30px;
+    font-size: 20px;
     border-radius: 10px;
-    width: 280px;
+    width: 100%;
     height: 50px;
     background: #838080; /* Red color */
     color: white;
@@ -109,44 +109,22 @@
     cursor: pointer;
     transition: 0.3s ease-in-out;
 	position: absolute;
-	bottom: 20px; /* Distance from bottom */
-	transform: translateX(-105%); /* Center horizontally */
-	margin-bottom: 20px;
+	bottom: 10px; /* Distance from bottom */
+	margin-bottom: 5px;
   }
 </style>
 <div id="popup-overlay">
 	<div id="popup-content">
-		<p>Đây là popup!</p>
-		<input type="text" id="name" placeholder="Họ và tên" style="font-size: 20px; width: 90%;">
-		<input type="text" id="phoneNumber" placeholder="Số điện thoại nhé" style="font-size: 20px; width: 90%;">
-		<button onclick="closePopup()" class="close-button">Xác nhận tham dự</button>
+		<p>Hải-QUân 06-04-2024</p>
+		<iframe 
+			src="https://docs.google.com/forms/d/e/1FAIpQLSdPvtPIs5QBAyWx9fwbABfMcgrxgzs8OOykjFvhd8Zop0MJUA/formResponse" 
+			width=100%
+			height=80% 
+        	frameborder="0">
+    	</iframe>
+		<button onclick="closePopup()" style="bottom: 50px;; color: white; border: none; border-radius: 5px; background: #0ca547; font-size: 30px; width: 100%; height: 40;">Done</button>
 		<script>
 			async function closePopup() {
-
-				const fullName = document.getElementById("name").value;
-				const phoneNumber = document.getElementById("phoneNumber").value;
-
-				if (!fullName || !phoneNumber) {
-					alert("Vui lòng nhập đầy đủ thông tin!");
-					return;
-				}
-				const data = { fullName, phoneNumber };
-				try {
-					const response = await fetch("https://navy-virid.vercel.app/api/saveData", {
-						method: "POST",
-						headers: {
-							"Content-Type": "application/json"
-						},
-						body: JSON.stringify(data)
-					});
-
-					const result = await response.json();
-					alert(result.message);
-				} catch (error) {
-					console.error("Error:", error);
-					alert("Lỗi khi gửi dữ liệu!");
-				}
-
 			  document.getElementById("popup-overlay").style.display = "none";
 			  document.getElementById("main-content").classList.remove("no-interaction");
 			}
@@ -267,7 +245,7 @@
 						<h2>Thông tin <img src="images/hqIcon2.png" width="150" height="280" alt="Event Icon" class="event-icon"></h2>
 						
 						<!-- toi se tham gia btn -->
-    					<!-- <button onclick="showPopup()" style="font-size: 36px; border-radius: 7px; width: 280px; height: 70px;">Tôi sẽ tham dự</button>  -->
+    					<button onclick="showPopup()" style="border: none; color: rgb(248, 248, 248); background-color: #0ca547; font-size: 36px; border-radius: 7px; width: 350px; height: 70px;">Điền thông tin tham dự</button> 
 						<script>
 							function showPopup() {
 								
